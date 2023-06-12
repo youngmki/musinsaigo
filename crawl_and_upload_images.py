@@ -197,4 +197,4 @@ if __name__ == "__main__":
         logger=logger,
     )
 
-    logger.info("The 'Crawling and uploading images' job finished successfully.")
+    logger.info("Crawling and uploading images is complete.")

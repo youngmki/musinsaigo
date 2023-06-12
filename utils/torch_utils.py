@@ -4,8 +4,8 @@ import torch
 from safetensors.torch import load_file, save_file
 
 
-LORA_PREFIX_UNET = "lora_unet"
 LORA_PREFIX_TEXT_ENCODER = "lora_te"
+LORA_PREFIX_UNET = "lora_unet"
 
 
 def bin_to_safetensors(bin_path: str, safetensors_path: str) -> None:
@@ -54,7 +54,7 @@ def convert_lora_safetensor_to_diffusers(
                 curr_layer = curr_layer.__getattr__(temp_name)
                 if len(layer_infos) > 0:
                     temp_name = layer_infos.pop(0)
-                elif len(layer_infos) == 0:
+                else:
                     break
             except AttributeError:
                 if len(temp_name) > 0:

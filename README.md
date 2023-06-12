@@ -68,9 +68,10 @@ image.save("assets/test.png")
 ---
 - [ ] Preprocessing images with the outpainting technique
 - [ ] Providing support for upscaling output images
-- [ ] Fine-tuning the inpainting model and connecting it with [*CLIPSeg*](https://arxiv.org/abs/2112.10003) to enable virtual styling
+- [ ] Fine-tuning the inpainting model and connecting it with [*CLIPSeg*](https://arxiv.org/abs/2112.10003) or [*Grounding DINO*](https://arxiv.org/abs/2104.14294) + [*SAM*](https://arxiv.org/abs/2304.02643) to enable virtual styling
 - [ ] Testing the [*Dreambooth*](https://arxiv.org/abs/2208.12242)-[*LoRA*](https://arxiv.org/abs/2106.09685) technique on multiple subjects
 - [ ] Speeding up inference (testing with *PyTorch 2.0*, *Triton*, *AWS Inferentia*, and more)
+- [ ] Building a model for version 2.0 with distributed learning from a large number of high-quality images
 
 ### References
 
