@@ -66,12 +66,11 @@ image.save("assets/test.png")
 ### Roadmap
 
 ---
-- [ ] Preprocessing images with the outpainting technique
-- [ ] Providing support for upscaling output images
-- [ ] Fine-tuning the inpainting model and connecting it with [*CLIPSeg*](https://arxiv.org/abs/2112.10003) or [*Grounding DINO*](https://arxiv.org/abs/2104.14294) + [*SAM*](https://arxiv.org/abs/2304.02643) to enable virtual styling
-- [ ] Testing the [*Dreambooth*](https://arxiv.org/abs/2208.12242)-[*LoRA*](https://arxiv.org/abs/2106.09685) technique on multiple subjects
-- [ ] Speeding up inference (testing with *PyTorch 2.0*, *Triton*, *AWS Inferentia*, and more)
-- [ ] Building a model for version 2.0 with distributed learning from a large number of high-quality images
+- [ ] Preprocess images with [the outpainting technique](https://github.com/fenglinglwb/MAT).
+- [ ] Provide support for upscaling output images.
+- [ ] [Fine-Tune the inpainting model](https://github.com/huggingface/diffusers/blob/main/examples/research_projects/dreambooth_inpaint/train_dreambooth_inpaint_lora.py) and connecting it with [Grounded-Segment-Anything](https://github.com/IDEA-Research/Grounded-Segment-Anything) to enable virtual styling.
+- [ ] Test techniques for [memorizing multiple subjects](https://github.com/huggingface/diffusers/blob/main/examples/research_projects/multi_subject_dreambooth/train_multi_subject_dreambooth.py).
+- [ ] Build a model for version 2.0 with distributed learning from a large number of high-quality images.
 
 ### References
 

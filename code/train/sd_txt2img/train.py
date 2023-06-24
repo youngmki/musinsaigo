@@ -83,7 +83,7 @@ inference: true
 These are LoRA adaption weights for {base_model}. The weights were fine-tuned on the {dataset_name} dataset. You can find some example images in the following. \n
 {img_str}
 """
-    with open(os.path.join(repo_folder, "README.md"), "w") as f:
+    with open(os.path.join(repo_folder, "README.md"), "w", encoding="utf-8") as f:
         f.write(yaml + model_card)
 
 
@@ -405,7 +405,7 @@ def parse_args():
 
     args = parser.parse_args()
     env_local_rank = int(os.environ.get("LOCAL_RANK", -1))
-    if env_local_rank != -1 and env_local_rank != args.local_rank:
+    if env_local_rank not in (-1, args.local_rank):
         args.local_rank = env_local_rank
 
     # Sanity checks
@@ -583,10 +583,10 @@ def main():
     if args.use_8bit_adam:
         try:
             import bitsandbytes as bnb
-        except ImportError:
+        except ImportError as exc:
             raise ImportError(
-                "Please install bitsandbytes to use 8-bit Adam. You can do so by running `pip install bitsandbytes`"
-            )
+                "To use 8-bit Adam, please install the bitsandbytes library: `pip install bitsandbytes`."
+            ) from exc
 
         optimizer_cls = bnb.optim.AdamW8bit
     else:
